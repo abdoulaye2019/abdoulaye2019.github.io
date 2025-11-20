@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projet Salifort Motors - Analyse prédictive du turnover employé">
+    <title>Salifort Motors HR Analytics | Abdoulaye Leye</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">Abdoulaye Leye</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Accueil</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+            <h1 class="project-title">Salifort Motors - HR Analytics</h1>
+            <p class="project-lead">
+                Analyse prédictive du turnover des employés avec Machine Learning
+            </p>
+            <div class="project-meta">
+                <span class="meta-item">
+                    <i class="fas fa-calendar"></i> Septembre 2025
+                </span>
+                <span class="meta-item">
+                    <i class="fas fa-tag"></i> Google Advanced Data Analytics Capstone
+                </span>
+                <span class="meta-item">
+                    <i class="fas fa-code"></i> Python, Machine Learning
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Overview -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-info-circle"></i> Vue d'ensemble</h2>
+                        <p>
+                            Ce projet capstone fait partie de la certification Google Advanced Data Analytics.
+                            L'objectif était de développer un modèle prédictif pour identifier les employés susceptibles
+                            de quitter l'entreprise Salifort Motors, permettant ainsi au département RH de prendre des
+                            décisions data-driven pour améliorer la rétention des talents.
+                        </p>
+                    </div>
+
+                    <!-- Problem Statement -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-question-circle"></i> Problématique</h2>
+                        <p>
+                            Salifort Motors fait face à un taux de turnover élevé (23.81%) qui engendre des coûts
+                            importants en recrutement et formation. Le département RH souhaite comprendre :
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Quels facteurs contribuent au départ des employés ?</li>
+                            <li><i class="fas fa-check"></i> Comment prédire les employés à risque de départ ?</li>
+                            <li><i class="fas fa-check"></i> Quelles actions RH mettre en place pour améliorer la rétention ?</li>
+                        </ul>
+                    </div>
+
+                    <!-- Dataset -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-database"></i> Données</h2>
+                        <div class="info-box">
+                            <h4>Caractéristiques du dataset</h4>
+                            <ul>
+                                <li><strong>14,999 employés</strong> avec 10 caractéristiques</li>
+                                <li><strong>Variables clés :</strong>
+                                    <ul>
+                                        <li>satisfaction_level (niveau de satisfaction)</li>
+                                        <li>last_evaluation (dernière évaluation)</li>
+                                        <li>number_project (nombre de projets)</li>
+                                        <li>average_monthly_hours (heures mensuelles moyennes)</li>
+                                        <li>time_spend_company (ancienneté)</li>
+                                        <li>work_accident (accidents de travail)</li>
+                                        <li>promotion_last_5years (promotions sur 5 ans)</li>
+                                        <li>department (département)</li>
+                                        <li>salary (niveau de salaire)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Target :</strong> left (1 = parti, 0 = resté)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Methodology -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-project-diagram"></i> Méthodologie</h2>
+                        <div class="methodology-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Exploration des données (EDA)</h3>
+                                    <p>
+                                        Analyse exploratoire approfondie pour comprendre la distribution des variables,
+                                        identifier les outliers et découvrir les patterns de turnover.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Nettoyage et préparation</h3>
+                                    <p>
+                                        Traitement des 3,008 duplicatas, standardisation des noms de colonnes,
+                                        et gestion des outliers (retenus car représentent des cas légitimes).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Feature Engineering</h3>
+                                    <p>
+                                        Encodage des variables catégorielles (department, salary) avec One-Hot Encoding
+                                        pour préparer les données au machine learning.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Modélisation</h3>
+                                    <p>
+                                        Développement d'un modèle de régression logistique pour prédire le turnover,
+                                        avec optimisation des hyperparamètres et validation croisée.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h3>Évaluation et insights</h3>
+                                    <p>
+                                        Analyse des performances du modèle et extraction des facteurs clés
+                                        influençant le départ des employés.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Findings -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-chart-line"></i> Résultats clés</h2>
+
+                        <div class="findings-grid">
+                            <div class="finding-card">
+                                <div class="finding-icon">
+                                    <i class="fas fa-frown"></i>
+                                </div>
+                                <h3>Profil 1: Employés surchargés</h3>
+                                <p>
+                                    <strong>Caractéristiques:</strong> Faible satisfaction, nombreux projets,
+                                    heures excessives (250+ heures/mois)
+                                </p>
+                                <p class="finding-impact">Impact: Burnout et départ inévitable</p>
+                            </div>
+
+                            <div class="finding-card">
+                                <div class="finding-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3>Profil 2: Hauts performeurs</h3>
+                                <p>
+                                    <strong>Caractéristiques:</strong> Haute satisfaction, excellentes évaluations,
+                                    mais pas de promotions
+                                </p>
+                                <p class="finding-impact">Impact: Départ pour meilleures opportunités</p>
+                            </div>
+
+                            <div class="finding-card">
+                                <div class="finding-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3>Profil 3: Vétérans</h3>
+                                <p>
+                                    <strong>Caractéristiques:</strong> 6-10 ans d'ancienneté,
+                                    patterns de départ différents
+                                </p>
+                                <p class="finding-impact">Impact: Perte d'expertise critique</p>
+                            </div>
+                        </div>
+
+                        <div class="insight-box">
+                            <h4><i class="fas fa-lightbulb"></i> Insight majeur</h4>
+                            <p>
+                                Le niveau de satisfaction présente une distribution bimodale chez les employés partis :
+                                deux groupes distincts (très insatisfaits ET très satisfaits) quittent l'entreprise,
+                                mais pour des raisons opposées.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-bullhorn"></i> Recommandations</h2>
+                        <div class="recommendations">
+                            <div class="recommendation">
+                                <div class="rec-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <h3>Équilibrer la charge de travail</h3>
+                                <p>
+                                    Limiter le nombre de projets simultanés et surveiller les heures supplémentaires
+                                    pour prévenir le burnout.
+                                </p>
+                            </div>
+
+                            <div class="recommendation">
+                                <div class="rec-icon">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <h3>Améliorer les opportunités de promotion</h3>
+                                <p>
+                                    Créer des chemins de carrière clairs et récompenser les hauts performeurs
+                                    avec des promotions régulières.
+                                </p>
+                            </div>
+
+                            <div class="recommendation">
+                                <div class="rec-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3>Renforcer l'engagement</h3>
+                                <p>
+                                    Mettre en place des enquêtes de satisfaction régulières et des entretiens
+                                    individuels pour détecter les signaux faibles.
+                                </p>
+                            </div>
+
+                            <div class="recommendation">
+                                <div class="rec-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <h3>Réviser la politique salariale</h3>
+                                <p>
+                                    Analyser et ajuster les salaires pour rester compétitif,
+                                    particulièrement pour les employés à haut potentiel.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technologies -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-tools"></i> Technologies utilisées</h2>
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-table"></i>
+                                <span>Pandas</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Matplotlib</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-chart-area"></i>
+                                <span>Seaborn</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Scikit-learn</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-book"></i>
+                                <span>Jupyter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Code & Resources -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-code"></i> Code et ressources</h2>
+                        <div class="resource-buttons">
+                            <a href="#" class="btn btn-primary" onclick="alert('Le notebook sera bientôt disponible')">
+                                <i class="fab fa-github"></i> Voir le code sur GitHub
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="alert('Le notebook sera bientôt disponible')">
+                                <i class="fas fa-book"></i> Notebook Jupyter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Informations du projet</h3>
+                        <ul class="project-info-list">
+                            <li>
+                                <strong><i class="fas fa-calendar"></i> Date:</strong>
+                                <span>Septembre 2025</span>
+                            </li>
+                            <li>
+                                <strong><i class="fas fa-user"></i> Client:</strong>
+                                <span>Salifort Motors (Projet Académique)</span>
+                            </li>
+                            <li>
+                                <strong><i class="fas fa-certificate"></i> Certification:</strong>
+                                <span>Google Advanced Data Analytics</span>
+                            </li>
+                            <li>
+                                <strong><i class="fas fa-clock"></i> Durée:</strong>
+                                <span>2 semaines</span>
+                            </li>
+                            <li>
+                                <strong><i class="fas fa-code"></i> Langage:</strong>
+                                <span>Python</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Compétences démontrées</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Logistic Regression</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">EDA</span>
+                            <span class="skill-tag">Feature Engineering</span>
+                            <span class="skill-tag">Model Evaluation</span>
+                            <span class="skill-tag">Business Insights</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Partager ce projet</h3>
+                        <div class="share-buttons">
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://abdoulaye2019.github.io/projects/salifort-motors.html"
+                               target="_blank" class="share-btn linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=https://abdoulaye2019.github.io/projects/salifort-motors.html"
+                               target="_blank" class="share-btn twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="mailto:?subject=Projet intéressant&body=Découvrez ce projet: https://abdoulaye2019.github.io/projects/salifort-motors.html"
+                               class="share-btn email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Abdoulaye Leye. Tous droits réservés.</p>
+            <p>Data Analyst | GIS Specialist | Géomaticien</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
