@@ -1,5 +1,7 @@
 # Portfolio d'Abdoulaye Leye
 
+![Visiteurs](https://hits.sh/abdoulaye2019.github.io.svg?style=flat&label=Visiteurs&color=2563eb&labelColor=1e40af)
+
 Portfolio professionnel présentant mes projets en Data Analytics, SIG et Géomatique.
 
 🌐 **Site web**: [https://abdoulaye2019.github.io](https://abdoulaye2019.github.io)
