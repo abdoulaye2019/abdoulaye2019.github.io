@@ -5,7 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio professionnel d'Abdoulaye Leye - Data Analyst, Spécialiste SIG et Géomaticien">
     <meta name="author" content="Abdoulaye Leye">
+    <meta name="keywords" content="Data Analyst, GIS, SIG, Géomatique, Machine Learning, Python, QGIS, Business Intelligence">
     <title>Abdoulaye Leye | Data Analyst & GIS Specialist</title>
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Abdoulaye Leye | Data Analyst & GIS Specialist">
+    <meta property="og:description" content="Professionnel en Data Management et Systèmes d'Information Géographique avec expertise en Machine Learning">
+    <meta property="og:image" content="https://abdoulaye2019.github.io/assets/images/profile.png">
+    <meta property="og:url" content="https://abdoulaye2019.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abdoulaye Leye | Data Analyst & GIS Specialist">
+    <meta name="twitter:description" content="Professionnel en Data Management et SIG avec expertise en Machine Learning">
+    <meta name="twitter:image" content="https://abdoulaye2019.github.io/assets/images/profile.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -52,6 +70,9 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="assets/CV_Abdoulaye_Leye.pdf" download class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-download"></i> Télécharger CV
+                    </a>
                     <a href="#contact" class="btn btn-secondary">Me contacter</a>
                 </div>
                 <div class="social-links">
@@ -71,6 +92,30 @@
             </div>
             <div class="hero-image">
                 <img src="assets/images/profile.png" alt="Abdoulaye Leye">
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); padding: 4rem 0; color: white;">
+        <div class="container">
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5" style="font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem;">0</div>
+                    <div class="stat-label" style="font-size: 1.125rem; opacity: 0.95;">Ans d'Expérience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="20" style="font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem;">0</div>
+                    <div class="stat-label" style="font-size: 1.125rem; opacity: 0.95;">Projets Complétés</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="6" style="font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem;">0</div>
+                    <div class="stat-label" style="font-size: 1.125rem; opacity: 0.95;">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98" style="font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem;">0</div>
+                    <div class="stat-label" style="font-size: 1.125rem; opacity: 0.95;">% Précision ML</div>
+                </div>
             </div>
         </div>
     </section>
@@ -468,5 +513,56 @@
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
+
+    <!-- Animated Statistics Counter -->
+    <script>
+        // Counter animation for statistics
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            };
+
+            updateCounter();
+        }
+
+        // Intersection Observer to trigger animation when section is visible
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        if (counter.textContent === '0') {
+                            animateCounter(counter);
+                        }
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe stats section
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    </script>
 </body>
 </html>
