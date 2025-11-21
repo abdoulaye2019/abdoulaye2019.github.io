@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Salifort Motors HR Analytics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+            line-height: 1.6;
+            color: #24292e;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .badges img {
+            height: 28px;
+        }
+
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-item strong {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-item span {
+            font-size: 1.125rem;
+        }
+
+        .content {
+            margin: 3rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            color: #1e40af;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: #2563eb;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.75rem;
+            color: #374151;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .achievement-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            font-size: 1rem;
+            color: #6b7280;
+        }
+
+        .dataset-info {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .dataset-info ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .dataset-info li::before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .methodology-steps {
+            counter-reset: step-counter;
+        }
+
+        .step {
+            margin: 2rem 0;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .results-table th {
+            background: #2563eb;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .results-table tr:hover {
+            background: #f9fafb;
+        }
+
+        .winner-badge {
+            background: #10b981;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: #f3f4f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .meta-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="index.html" class="back-link" style="color: white;">← Retour au projet</a>
+            <h1>Salifort Motors HR Analytics</h1>
+            <p style="font-size: 1.25rem; opacity: 0.95;">Employee Turnover Prediction - Documentation Complète</p>
+
+            <div class="badges">
+                <a href="https://colab.research.google.com/github/abdoulaye2019/abdoulaye2019.github.io/blob/main/projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb" target="_blank">
+                    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+                </a>
+                <a href="https://mybinder.org/v2/gh/abdoulaye2019/abdoulaye2019.github.io/main?filepath=projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb" target="_blank">
+                    <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder">
+                </a>
+                <a href="https://github.com/abdoulaye2019/abdoulaye2019.github.io/blob/main/projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb" target="_blank">
+                    <img src="https://img.shields.io/badge/View%20on-GitHub-181717?style=flat&logo=github" alt="View on GitHub">
+                </a>
+            </div>
+
+            <div class="meta-info">
+                <div class="meta-item">
+                    <strong>Author</strong>
+                    <span>Abdoulaye Leye</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Project Type</strong>
+                    <span>Capstone Project - Google Data Analytics</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Date</strong>
+                    <span>November 2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>📊 Project Overview</h2>
+            <p>
+                This project analyzes employee turnover at Salifort Motors using advanced machine learning techniques.
+                The goal is to predict which employees are likely to leave the company and provide actionable insights
+                for HR decision-making.
+            </p>
+
+            <h3>🏆 Key Achievements</h3>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-value">98.1%</div>
+                    <div class="achievement-label">ROC-AUC Score (Gradient Boosting)</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-value">95.1%</div>
+                    <div class="achievement-label">Precision Rate</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-value">93.2%</div>
+                    <div class="achievement-label">Recall Rate</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-value">$18.5M</div>
+                    <div class="achievement-label">Potential Annual Savings</div>
+                </div>
+            </div>
+
+            <h2>📁 Dataset</h2>
+            <div class="dataset-info">
+                <ul>
+                    <li><strong>Source:</strong> Salifort Motors HR Department</li>
+                    <li><strong>Records:</strong> 14,999 employees (11,991 after removing duplicates)</li>
+                    <li><strong>Features:</strong> 10 variables including satisfaction level, evaluation scores, project count, hours worked, tenure, accidents, promotions, department, and salary</li>
+                    <li><strong>Target:</strong> Employee departure (left = 1, stayed = 0)</li>
+                    <li><strong>Class Distribution:</strong> 76.19% stayed, 23.81% left</li>
+                </ul>
+            </div>
+
+            <h2>🔬 Methodology</h2>
+            <div class="methodology-steps">
+                <div class="step">
+                    <h4>Data Preprocessing</h4>
+                    <ul>
+                        <li>Removed 3,008 duplicate records</li>
+                        <li>Standardized column naming conventions</li>
+                        <li>Created engineered features:
+                            <ul>
+                                <li><code>satisfaction_squared</code>: Non-linear satisfaction effects</li>
+                                <li><code>hours_per_project</code>: Work intensity metric</li>
+                                <li><code>overworked/underworked</code>: Workload category flags</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Feature Engineering</h4>
+                    <ul>
+                        <li>One-hot encoding for categorical variables (department, salary)</li>
+                        <li>StandardScaler normalization for numerical features</li>
+                        <li>Train-test split (80/20) with stratification</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Model Development</h4>
+                    <ul>
+                        <li><strong>Logistic Regression</strong> with GridSearchCV optimization</li>
+                        <li><strong>Random Forest</strong> with hyperparameter tuning</li>
+                        <li><strong>Gradient Boosting</strong> with learning rate optimization</li>
+                        <li>5-fold cross-validation for all models</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Model Evaluation</h4>
+                    <ul>
+                        <li>Classification metrics (Precision, Recall, F1-Score, Accuracy)</li>
+                        <li>ROC-AUC curves for model comparison</li>
+                        <li>Confusion matrices for error analysis</li>
+                        <li>Feature importance analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>📈 Model Results</h2>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Accuracy</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                        <th>ROC-AUC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Gradient Boosting</strong> <span class="winner-badge">WINNER</span></td>
+                        <td>98.1%</td>
+                        <td>95.1%</td>
+                        <td>93.2%</td>
+                        <td>0.941</td>
+                        <td>0.981</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Random Forest</strong></td>
+                        <td>98.6%</td>
+                        <td>98.9%</td>
+                        <td>92.7%</td>
+                        <td>0.957</td>
+                        <td>0.978</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Logistic Regression</strong></td>
+                        <td>75.9%</td>
+                        <td>48.2%</td>
+                        <td>87.9%</td>
+                        <td>0.623</td>
+                        <td>0.872</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h4>🎯 Winner: Gradient Boosting</h4>
+                <p>
+                    Gradient Boosting achieved the best overall performance with <strong>98.1% ROC-AUC</strong>,
+                    balancing high precision (95.1%) and recall (93.2%). This model successfully identifies
+                    <strong>371 out of 398 employees</strong> who will leave while minimizing false positives.
+                </p>
+            </div>
+
+            <h2>💼 Business Impact</h2>
+            <h3>ROI Analysis</h3>
+            <div class="dataset-info">
+                <ul>
+                    <li><strong>Departures Prevented:</strong> 371 employees correctly identified (vs. 13 baseline)</li>
+                    <li><strong>Cost per Departure:</strong> $50,000 (recruitment, training, knowledge loss)</li>
+                    <li><strong>Annual Savings:</strong> (371 - 13) × $50K = <strong>$17.9M</strong></li>
+                    <li><strong>False Alarm Cost:</strong> 19 × 5 hours × $50/hour × 12 months = <strong>$57K</strong></li>
+                    <li><strong>Net ROI:</strong> $17.9M - $57K = <strong>$17.84M per year</strong></li>
+                </ul>
+            </div>
+
+            <h3>Key Recommendations</h3>
+            <div class="step">
+                <h4>Immediate Actions (0-3 months)</h4>
+                <ul>
+                    <li>Deploy monthly risk scoring system using Gradient Boosting predictions</li>
+                    <li>Implement mandatory career reviews at 4-year tenure milestone</li>
+                    <li>Audit and accelerate promotion timelines (73% risk reduction)</li>
+                    <li>Investigate post-accident support programs</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>Strategic Initiatives (3-12 months)</h4>
+                <ul>
+                    <li>Develop differentiated retention strategies for low vs. high satisfaction employees</li>
+                    <li>Optimize project allocation to eliminate extreme workloads (2 or 7+ projects)</li>
+                    <li>Integrate model outputs into performance management systems</li>
+                    <li>Train managers on interpreting and acting on risk scores</li>
+                </ul>
+            </div>
+
+            <h2>🛠️ Technologies Used</h2>
+            <div class="dataset-info">
+                <ul>
+                    <li><strong>Python 3.11</strong> - Core programming language</li>
+                    <li><strong>Scikit-learn</strong> - Machine learning algorithms and GridSearchCV</li>
+                    <li><strong>Pandas & NumPy</strong> - Data manipulation and analysis</li>
+                    <li><strong>Matplotlib & Seaborn</strong> - Data visualization</li>
+                    <li><strong>Jupyter Notebook</strong> - Interactive development environment</li>
+                </ul>
+            </div>
+
+            <h2>📚 Additional Resources</h2>
+            <div class="dataset-info">
+                <ul>
+                    <li><a href="index.html">Vue d'ensemble du projet</a></li>
+                    <li><a href="results.html">Résultats détaillés des modèles</a></li>
+                    <li><a href="qa.html">Questions & Réponses approfondies</a></li>
+                    <li><a href="guide-coefficients-metriques.md" target="_blank">Guide des coefficients et métriques (FR)</a></li>
+                    <li><a href="guide-modeles-classification.md" target="_blank">Guide des modèles de classification (FR)</a></li>
+                    <li><a href="https://github.com/abdoulaye2019/abdoulaye2019.github.io/tree/main/projects/salifort-hr-analytics" target="_blank">Code source sur GitHub</a></li>
+                </ul>
+            </div>
+
+            <div style="margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: white; border-radius: 8px; text-align: center;">
+                <h3 style="color: white; margin-bottom: 1rem;">Essayez le notebook vous-même!</h3>
+                <p style="margin-bottom: 1.5rem;">Cliquez sur les badges en haut pour ouvrir le notebook dans Google Colab, Binder, ou voir le code sur GitHub.</p>
+                <a href="../../index.html" style="display: inline-block; background: white; color: #2563eb; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">← Retour au portfolio</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
