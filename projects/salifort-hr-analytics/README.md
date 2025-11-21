@@ -1,5 +1,9 @@
 # Salifort Motors HR Analytics - Employee Turnover Prediction
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abdoulaye2019/abdoulaye2019.github.io/blob/main/projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abdoulaye2019/abdoulaye2019.github.io/main?filepath=projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
+[![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-181717?style=flat&logo=github)](https://github.com/abdoulaye2019/abdoulaye2019.github.io/blob/main/projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
+
 **Author:** Abdoulaye Leye
 **Project Type:** Capstone Project - Google Data Analytics Advanced Certificate
 **Date:** November 2025
