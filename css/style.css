@@ -191,17 +191,20 @@ section {
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 .btn {
-    padding: 12px 30px;
+    padding: 12px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
     display: inline-block;
+    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
 .btn-primary {

@@ -536,31 +536,46 @@
             updateCounter();
         }
 
+        // Animate all counters
+        function animateAllCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                if (counter.textContent === '0' || counter.textContent.trim() === '0') {
+                    animateCounter(counter);
+                }
+            });
+        }
+
         // Intersection Observer to trigger animation when section is visible
         const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.1,
+            rootMargin: '0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.stat-number');
-                    counters.forEach(counter => {
-                        if (counter.textContent === '0') {
-                            animateCounter(counter);
-                        }
-                    });
+                    animateAllCounters();
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe stats section
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
             const statsSection = document.querySelector('.stats-section');
             if (statsSection) {
-                observer.observe(statsSection);
+                // Check if section is already visible
+                const rect = statsSection.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+                if (isVisible) {
+                    // Animate immediately if visible
+                    setTimeout(animateAllCounters, 300);
+                } else {
+                    // Otherwise observe for scroll
+                    observer.observe(statsSection);
+                }
             }
         });
     </script>
