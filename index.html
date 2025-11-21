@@ -516,68 +516,81 @@
 
     <!-- Animated Statistics Counter -->
     <script>
-        // Counter animation for statistics
-        function animateCounter(element) {
-            const target = parseInt(element.getAttribute('data-target'));
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16); // 60fps
-            let current = 0;
+        (function() {
+            'use strict';
 
-            const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                    element.textContent = Math.floor(current);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    element.textContent = target;
+            function animateCounter(element) {
+                const target = parseInt(element.getAttribute('data-target'));
+                if (isNaN(target)) return;
+
+                const duration = 2000;
+                const start = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const current = Math.floor(progress * target);
+
+                    element.textContent = current;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        element.textContent = target;
+                    }
                 }
-            };
 
-            updateCounter();
-        }
+                requestAnimationFrame(update);
+            }
 
-        // Animate all counters
-        function animateAllCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                if (counter.textContent === '0' || counter.textContent.trim() === '0') {
+            function startAnimation() {
+                const counters = document.querySelectorAll('.stat-number');
+                console.log('Found counters:', counters.length);
+                counters.forEach(counter => {
+                    console.log('Animating counter with target:', counter.getAttribute('data-target'));
                     animateCounter(counter);
-                }
-            });
-        }
+                });
+            }
 
-        // Intersection Observer to trigger animation when section is visible
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px'
-        };
+            // Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log('Stats section visible, starting animation');
+                        startAnimation();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateAllCounters();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+            // Wait for DOM to be ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const statsSection = document.querySelector('.stats-section');
-            if (statsSection) {
-                // Check if section is already visible
-                const rect = statsSection.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-
-                if (isVisible) {
-                    // Animate immediately if visible
-                    setTimeout(animateAllCounters, 300);
-                } else {
-                    // Otherwise observe for scroll
+            function init() {
+                console.log('Initializing stats counter');
+                const statsSection = document.querySelector('.stats-section');
+                if (statsSection) {
+                    console.log('Stats section found');
+                    // Always observe, let the observer decide when to animate
                     observer.observe(statsSection);
+
+                    // Also try immediate animation as backup
+                    setTimeout(() => {
+                        const rect = statsSection.getBoundingClientRect();
+                        if (rect.top < window.innerHeight && rect.bottom > 0) {
+                            console.log('Section visible on load, animating immediately');
+                            startAnimation();
+                        }
+                    }, 500);
+                } else {
+                    console.error('Stats section not found');
                 }
             }
-        });
+        })();
     </script>
 </body>
 </html>
