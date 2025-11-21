@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Employee Turnover Prediction using Machine Learning - Salifort Motors HR Analytics Project by Abdoulaye Leye">
+    <title>Salifort Motors HR Analytics | Abdoulaye Leye</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .metric-card {
+            background: var(--white);
+            border: 2px solid var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .content-section {
+            background: var(--bg-light);
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-badge {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .insight-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Salifort Motors HR Analytics</h1>
+            <p>Advanced Employee Turnover Prediction using Machine Learning & Data Science</p>
+            <div>
+                <span class="badge">Python</span>
+                <span class="badge">Scikit-Learn</span>
+                <span class="badge">Machine Learning</span>
+                <span class="badge">HR Analytics</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics Section -->
+    <section class="section">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">96.7%</div>
+                    <div class="metric-label">Recall Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0.851</div>
+                    <div class="metric-label">ROC-AUC Score</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$15.5M</div>
+                    <div class="metric-label">Annual Savings Potential</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">14,999</div>
+                    <div class="metric-label">Employees Analyzed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview Section -->
+    <section class="section content-section">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="section-subtitle">A comprehensive machine learning solution to predict and prevent employee turnover</p>
+
+            <div class="card">
+                <h3>Business Challenge</h3>
+                <p>Salifort Motors faced significant costs due to employee turnover. With an average cost of $50,000 per departure, the company needed a data-driven approach to identify at-risk employees and implement proactive retention strategies.</p>
+            </div>
+
+            <div class="card">
+                <h3>Solution Approach</h3>
+                <ul class="feature-list">
+                    <li>Analyzed 14,999 employee records with 10 key features including satisfaction levels, performance metrics, and work patterns</li>
+                    <li>Developed and compared multiple machine learning models: Logistic Regression, Random Forest, and Gradient Boosting</li>
+                    <li>Implemented advanced feature engineering to capture non-linear relationships and interaction effects</li>
+                    <li>Optimized models using GridSearchCV with 5-fold cross-validation for maximum predictive power</li>
+                    <li>Generated actionable business recommendations backed by statistical evidence</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Findings Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Key Insights & Findings</h2>
+            <p class="section-subtitle">Data-driven discoveries that transform HR strategy</p>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-title">Critical Retention Lever</div>
+                    <p>Promotions reduce turnover risk by <span class="highlight">73%</span> - the strongest predictor of employee retention</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">4-Year Milestone</div>
+                    <p>Employees at 4-5 years tenure show <span class="highlight">143% increased</span> departure risk - a critical intervention window</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Satisfaction Impact</div>
+                    <p>Employee satisfaction shows bimodal distribution: both very satisfied and very dissatisfied employees may leave</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">Workload Balance</div>
+                    <p>Employees with 2 projects (54% turnover) or 7+ projects (100% turnover) need immediate attention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Stack Section -->
+    <section class="section content-section">
+        <div class="container">
+            <h2 class="section-title">Technical Implementation</h2>
+
+            <div class="card">
+                <h3>Technologies & Tools</h3>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python 3.11</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">NumPy</span>
+                    <span class="tech-badge">Matplotlib</span>
+                    <span class="tech-badge">Seaborn</span>
+                    <span class="tech-badge">Jupyter Notebook</span>
+                    <span class="tech-badge">GridSearchCV</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Methodology Highlights</h3>
+                <ul class="feature-list">
+                    <li><strong>Data Preprocessing:</strong> Cleaned 3,008 duplicate records, standardized features, and engineered new variables</li>
+                    <li><strong>Feature Engineering:</strong> Created satisfaction_squared, hours_per_project, and workload category flags</li>
+                    <li><strong>Model Training:</strong> Hyperparameter optimization with cross-validation for three distinct algorithms</li>
+                    <li><strong>Evaluation Metrics:</strong> ROC-AUC, Precision, Recall, F1-Score with emphasis on minimizing false negatives</li>
+                    <li><strong>Business Translation:</strong> Converted model predictions into actionable retention strategies</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Impact Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Business Impact & Recommendations</h2>
+
+            <div class="card">
+                <h3>Immediate Actions (0-3 months)</h3>
+                <ul class="feature-list">
+                    <li>Deploy monthly risk scoring system using model predictions</li>
+                    <li>Implement mandatory career milestone reviews at 4-year tenure mark</li>
+                    <li>Audit and accelerate promotion timelines - 73% risk reduction opportunity</li>
+                    <li>Investigate post-accident support programs for replication</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Strategic Initiatives (3-12 months)</h3>
+                <ul class="feature-list">
+                    <li>Develop differentiated retention strategies for low vs. high satisfaction employees</li>
+                    <li>Optimize project allocation to eliminate extreme workloads (2 or 7+ projects)</li>
+                    <li>Integrate model outputs into performance management and succession planning</li>
+                    <li>Train managers on interpreting and acting on employee risk scores</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Expected ROI</h3>
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                    Model prevents <strong>311 additional annual departures</strong>, representing
+                    <strong style="color: var(--primary-color); font-size: 1.5rem;">$15.5 million</strong>
+                    in cost avoidance through reduced recruitment, training, and knowledge transfer expenses.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Explore the Full Analysis</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.95;">Dive deep into the technical implementation, visualizations, and detailed findings</p>
+            <a href="results.html" class="btn">📊 View Model Results</a>
+            <a href="qa.html" class="btn">💬 Q&A Analysis</a>
+            <a href="Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb" class="btn btn-secondary">📓 Jupyter Notebook</a>
+            <a href="README.md" class="btn btn-secondary">📖 Documentation</a>
+            <a href="../../index.html" class="btn btn-secondary">🏠 Portfolio</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Abdoulaye Leye | Data Analyst & Machine Learning Engineer</p>
+            <p>
+                <a href="https://github.com/abdoulaye2019" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+                <a href="mailto:your.email@example.com">Email</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

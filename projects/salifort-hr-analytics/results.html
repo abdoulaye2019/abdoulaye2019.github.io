@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Results - Salifort Motors HR Analytics | Abdoulaye Leye</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: var(--primary);
+            color: white;
+        }
+
+        th, td {
+            padding: 1.25rem;
+            text-align: left;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tbody tr:hover {
+            background: #f3f4f6;
+        }
+
+        .metric-high {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .winner-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .viz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .viz-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .viz-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .viz-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .insight-box h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .key-findings {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .finding-item {
+            padding: 1rem;
+            border-left: 3px solid var(--success);
+            margin: 1rem 0;
+            background: #f0fdf4;
+            border-radius: 4px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .back-btn:hover {
+            background: var(--bg-light);
+        }
+
+        @media (max-width: 768px) {
+            .viz-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 Model Results & Performance Analysis</h1>
+        <p>Advanced Machine Learning for Employee Turnover Prediction</p>
+        <a href="index.html" class="back-btn">← Back to Project Overview</a>
+    </div>
+
+    <div class="container">
+        <div class="insight-box">
+            <h3>🏆 Winner: Gradient Boosting Model</h3>
+            <p><strong>Best Overall Performance:</strong> With 98.1% ROC-AUC score, 95.1% precision, and 93.2% recall, the Gradient Boosting model provides the optimal balance between identifying employees at risk while minimizing false alarms.</p>
+        </div>
+
+        <h2 style="margin: 2rem 0 1rem;">Model Performance Comparison</h2>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Accuracy</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                        <th>ROC-AUC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Logistic Regression</strong></td>
+                        <td>75.9%</td>
+                        <td>39.8%</td>
+                        <td class="metric-high">87.9%</td>
+                        <td>54.8%</td>
+                        <td>87.2%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Random Forest</strong></td>
+                        <td class="metric-high">98.6%</td>
+                        <td class="metric-high">98.9%</td>
+                        <td>92.7%</td>
+                        <td class="metric-high">95.7%</td>
+                        <td class="metric-high">97.8%</td>
+                    </tr>
+                    <tr style="background: #fef3c7;">
+                        <td><strong>Gradient Boosting</strong> <span class="winner-badge">BEST</span></td>
+                        <td class="metric-high">98.1%</td>
+                        <td class="metric-high">95.1%</td>
+                        <td class="metric-high">93.2%</td>
+                        <td class="metric-high">94.2%</td>
+                        <td class="metric-high">98.1%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="key-findings">
+            <h2>Key Findings & Insights</h2>
+
+            <div class="finding-item">
+                <strong>🎯 Superior Prediction Capability:</strong> Gradient Boosting correctly identifies 93.2% of employees who will leave, with only 4.9% false positive rate.
+            </div>
+
+            <div class="finding-item">
+                <strong>💰 Business Impact:</strong> At 50K per employee turnover cost, preventing 371 departures (out of 398) saves approximately <strong>$18.5M annually</strong>.
+            </div>
+
+            <div class="finding-item">
+                <strong>📊 Model Reliability:</strong> 98.1% ROC-AUC indicates excellent discrimination between employees who stay vs. leave.
+            </div>
+
+            <div class="finding-item">
+                <strong>⚖️ Optimal Balance:</strong> Random Forest shows highest precision (98.9%) but Gradient Boosting provides better real-world balance for HR interventions.
+            </div>
+        </div>
+
+        <h2 style="margin: 2rem 0 1rem;">Visual Analysis</h2>
+        <div class="viz-grid">
+            <div class="viz-card">
+                <h3>📈 ROC Curves Comparison</h3>
+                <img src="roc_curves_comparison.png" alt="ROC Curves showing model discrimination capability">
+                <p style="margin-top: 1rem; color: var(--text-light);">
+                    All models show strong discrimination capability with AUC > 0.87. Gradient Boosting achieves the highest AUC of 0.981.
+                </p>
+            </div>
+
+            <div class="viz-card">
+                <h3>🎯 Confusion Matrices</h3>
+                <img src="confusion_matrices_comparison.png" alt="Confusion matrices for all models">
+                <p style="margin-top: 1rem; color: var(--text-light);">
+                    Visual representation of true positives, true negatives, false positives, and false negatives for each model.
+                </p>
+            </div>
+
+            <div class="viz-card">
+                <h3>🌳 Random Forest - Feature Importance</h3>
+                <img src="random_forest_feature_importance.png" alt="Random Forest feature importance">
+                <p style="margin-top: 1rem; color: var(--text-light);">
+                    Top predictors identified by Random Forest algorithm.
+                </p>
+            </div>
+
+            <div class="viz-card">
+                <h3>🚀 Gradient Boosting - Feature Importance</h3>
+                <img src="gradient_boosting_feature_importance.png" alt="Gradient Boosting feature importance">
+                <p style="margin-top: 1rem; color: var(--text-light);">
+                    Most influential features according to the winning Gradient Boosting model.
+                </p>
+            </div>
+        </div>
+
+        <div class="key-findings">
+            <h2>Model Selection Rationale</h2>
+            <p style="margin-bottom: 1rem;">Based on comprehensive evaluation, <strong>Gradient Boosting</strong> is recommended for production deployment:</p>
+
+            <div class="finding-item">
+                <strong>1. Highest ROC-AUC (0.981):</strong> Best overall discriminative ability between classes
+            </div>
+
+            <div class="finding-item">
+                <strong>2. Balanced Performance:</strong> 95.1% precision minimizes false alerts while 93.2% recall ensures few departures are missed
+            </div>
+
+            <div class="finding-item">
+                <strong>3. Robust to Overfitting:</strong> Cross-validated performance (92.7% recall in CV) closely matches test performance
+            </div>
+
+            <div class="finding-item">
+                <strong>4. Interpretability:</strong> Feature importance analysis enables actionable insights for HR interventions
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <h3>📋 Implementation Recommendation</h3>
+            <p><strong>Primary Model:</strong> Deploy Gradient Boosting for monthly employee risk scoring</p>
+            <p><strong>Secondary Model:</strong> Use Random Forest as validation - if both models flag high risk, prioritize for immediate intervention</p>
+            <p><strong>Monitoring:</strong> Track model performance quarterly and retrain when drift detected (>5% drop in recall)</p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="back-btn" style="margin-right: 1rem;">← Project Overview</a>
+            <a href="../../index.html" class="back-btn">🏠 Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

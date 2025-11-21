@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A - Salifort Motors HR Analytics | Abdoulaye Leye</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --success: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .qa-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .question {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .question::before {
+            content: "Q:";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .answer {
+            margin-left: 2rem;
+            padding-left: 2rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .answer h4 {
+            color: var(--text-dark);
+            margin: 1.5rem 0 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .answer p, .answer li {
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .answer ul {
+            margin: 0.75rem 0 0.75rem 1.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary);
+        }
+
+        .metric-inline {
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .back-btn:hover {
+            background: var(--bg-light);
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .question {
+                font-size: 1.25rem;
+            }
+
+            .answer {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>💬 Questions & Answers</h1>
+        <p>Comprehensive Analysis of the Salifort Motors HR Project</p>
+        <a href="index.html" class="back-btn">← Back to Project</a>
+    </div>
+
+    <div class="container">
+        <!-- Q1 -->
+        <div class="qa-section">
+            <div class="question">
+                What business recommendations do you propose based on the models built?
+            </div>
+            <div class="answer">
+                <h4>Immediate Actions (0-3 months):</h4>
+                <ul>
+                    <li><strong>Implement 4-year career milestone reviews</strong> with structured advancement discussions to address the critical decision window where turnover risk increases by 143%</li>
+                    <li><strong>Audit promotion frequency</strong> - current data shows promotions are highly effective retention tools, reducing risk by 73%</li>
+                    <li><strong>Investigate post-accident support programs</strong> to understand and replicate retention benefits (74% risk reduction observed)</li>
+                </ul>
+
+                <h4>Strategic Initiatives (3-12 months):</h4>
+                <ul>
+                    <li><strong>Deploy monthly risk scoring</strong> for all employees using model predictions (Gradient Boosting model with 98.1% ROC-AUC)</li>
+                    <li><strong>Create dual retention strategies:</strong> remediation programs for low-satisfaction employees vs. advancement opportunities for high-performers</li>
+                    <li><strong>Optimize project allocation</strong> to avoid extremes - employees with 2 projects show 54% turnover, while those with 7+ projects show 100% turnover</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>💰 ROI Impact:</strong> Model prevents 371 additional departures annually, saving approximately <span class="metric-inline">$18.5M</span> in recruitment and training costs (at $50K per departure).
+                </div>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qa-section">
+            <div class="question">
+                What potential recommendations would you make to your manager/company?
+            </div>
+            <div class="answer">
+                <h4>Model Deployment Strategy:</h4>
+                <ul>
+                    <li><strong>Deploy as risk assessment tool</strong> (not punitive system) - generate monthly scores for proactive HR interventions</li>
+                    <li><strong>Integrate into existing workflows:</strong> flag high-risk employees during performance reviews and succession planning</li>
+                    <li><strong>Use probability scores</strong> to prioritize retention investments rather than binary predictions</li>
+                </ul>
+
+                <h4>Process Changes:</h4>
+                <ul>
+                    <li><strong>Mandatory career discussions</strong> at 4-year mark to address critical decision window</li>
+                    <li><strong>Accelerate promotion timelines</strong> - data shows 73% risk reduction from recent promotions</li>
+                    <li><strong>Replicate post-accident support practices</strong> across broader employee base (investigate why accidents correlate with retention)</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>📊 Cost-Benefit Justification:</strong> With baseline model missing 324 departures costing $16.2M, even modest improvements from optimized Gradient Boosting model (93.2% recall) justify significant retention program investments.
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qa-section">
+            <div class="question">
+                Do you think your model could be improved? Why or why not? How?
+            </div>
+            <div class="answer">
+                <h4>Current Limitations:</h4>
+                <ul>
+                    <li><strong>Moderate precision in baseline model (39.8% for Logistic Regression)</strong> creates false alerts, though optimized models (Gradient Boosting: 95.1%) greatly improved this</li>
+                    <li><strong>Class imbalance approach</strong> may not generalize well to different organizational periods or demographics</li>
+                    <li><strong>Missing contextual data</strong> like manager quality, market conditions, compensation benchmarks, or career stage specifics</li>
+                </ul>
+
+                <h4>Improvement Opportunities:</h4>
+                <ul>
+                    <li><strong>Ensemble methods implementation (COMPLETED):</strong> Random Forest and Gradient Boosting significantly improved performance over baseline Logistic Regression
+                        <ul>
+                            <li>Random Forest: 98.6% accuracy, 98.9% precision, 92.7% recall, 0.978 ROC-AUC</li>
+                            <li>Gradient Boosting: 98.1% accuracy, 95.1% precision, 93.2% recall, 0.981 ROC-AUC</li>
+                        </ul>
+                    </li>
+                    <li><strong>Department-specific models</strong> might reveal role-based turnover patterns</li>
+                    <li><strong>Temporal features</strong> like "time since last promotion" or "performance trend" could enhance predictions</li>
+                    <li><strong>External data integration:</strong> industry salary benchmarks, market demand for skills, competitor hiring patterns</li>
+                </ul>
+
+                <h4>Alternative Approaches:</h4>
+                <ul>
+                    <li><strong>Threshold optimization per department</strong> to reduce false positives in stable areas</li>
+                    <li><strong>Survival analysis</strong> to predict when employees will leave, not just if they will leave</li>
+                    <li><strong>Regular model retraining</strong> (quarterly) as organizational culture and market conditions evolve</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>⚖️ Trade-off Assessment:</strong> Gradient Boosting model achieved excellent balance - 95.1% precision minimizes false alerts while 93.2% recall ensures few departures are missed. This represents significant improvement over baseline models.
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qa-section">
+            <div class="question">
+                Given what you know about the data and the models you were using, what other questions could you address for the team?
+            </div>
+            <div class="answer">
+                <h4>Deeper Analysis Questions:</h4>
+                <ul>
+                    <li><strong>Why do high-performing, satisfied employees leave?</strong> Investigate external factors like market opportunities or career ceiling perceptions (bimodal satisfaction distribution suggests two distinct turnover profiles)</li>
+                    <li><strong>What specific post-accident interventions improve retention?</strong> Analyze support mechanisms to replicate across organization (74% risk reduction observed)</li>
+                    <li><strong>How does turnover vary by manager/team?</strong> Add management quality as predictive feature for targeted leader development</li>
+                </ul>
+
+                <h4>Predictive Extensions:</h4>
+                <ul>
+                    <li><strong>When will high-risk employees leave?</strong> Develop timeline predictions for succession planning (survival analysis approach)</li>
+                    <li><strong>Which departments need targeted interventions?</strong> Department-specific risk models to customize retention strategies</li>
+                    <li><strong>How do seasonal patterns affect departures?</strong> Identify optimal timing for retention efforts and performance reviews</li>
+                </ul>
+
+                <h4>Operational Questions:</h4>
+                <ul>
+                    <li><strong>What's the optimal intervention cost per employee?</strong> ROI analysis for different retention strategies (mentoring, compensation, promotion)</li>
+                    <li><strong>How often should we retrain the model?</strong> Monitor prediction drift over time to maintain 98%+ accuracy</li>
+                    <li><strong>Can we predict flight risk before annual reviews?</strong> Early warning system development for proactive interventions</li>
+                    <li><strong>What's the impact of workload redistribution?</strong> A/B testing effects of project allocation changes on retention</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>🎯 Priority Recommendation:</strong> Investigate the bimodal satisfaction pattern where both very satisfied (potential poaching targets) and very dissatisfied (overworked) employees leave. This requires different retention strategies for each group.
+                </div>
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qa-section">
+            <div class="question">
+                What resources do you find yourself using as you complete this stage?
+            </div>
+            <div class="answer">
+                <h4>Technical Resources:</h4>
+                <ul>
+                    <li><strong>Scikit-learn Model Evaluation:</strong> <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank">https://scikit-learn.org/stable/modules/model_evaluation.html</a></li>
+                    <li><strong>Logistic Regression Documentation:</strong> <a href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression" target="_blank">https://scikit-learn.org/stable/modules/linear_model.html</a></li>
+                    <li><strong>Ensemble Methods (Random Forest, Gradient Boosting):</strong> <a href="https://scikit-learn.org/stable/modules/ensemble.html" target="_blank">https://scikit-learn.org/stable/modules/ensemble.html</a></li>
+                    <li><strong>GridSearchCV Documentation:</strong> <a href="https://scikit-learn.org/stable/modules/grid_search.html" target="_blank">https://scikit-learn.org/stable/modules/grid_search.html</a></li>
+                    <li><strong>ROC-AUC Interpretation Guide:</strong> <a href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc" target="_blank">Google ML Crash Course</a></li>
+                </ul>
+
+                <h4>Business Analytics References:</h4>
+                <ul>
+                    <li><strong>HR Analytics Best Practices:</strong> SHRM (Society for Human Resource Management) predictive analytics toolkit</li>
+                    <li><strong>Model Deployment Framework:</strong> <a href="https://ml-ops.org/content/mlops-principles" target="_blank">MLOps Principles</a></li>
+                    <li><strong>Employee Retention Research:</strong> Academic papers on turnover prediction modeling and organizational behavior</li>
+                </ul>
+
+                <h4>Visualization and Communication:</h4>
+                <ul>
+                    <li><strong>Matplotlib Documentation:</strong> <a href="https://matplotlib.org/stable/tutorials/index.html" target="_blank">https://matplotlib.org/stable/tutorials/</a></li>
+                    <li><strong>Seaborn Gallery:</strong> <a href="https://seaborn.pydata.org/examples/index.html" target="_blank">https://seaborn.pydata.org/examples/</a></li>
+                    <li><strong>Executive Reporting Guidelines:</strong> Internal stakeholder communication frameworks for translating technical results to business insights</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="qa-section">
+            <div class="question">
+                Do you have any ethical considerations in this stage?
+            </div>
+            <div class="answer">
+                <h4>Privacy and Transparency:</h4>
+                <ul>
+                    <li><strong>Employee consent:</strong> Ensure survey participants understood data would be used for predictive modeling</li>
+                    <li><strong>Anonymization:</strong> Individual risk scores must remain confidential to direct managers and HR only - never shared publicly or across departments</li>
+                    <li><strong>Transparency:</strong> Employees should know retention analytics are being used organizationally (without revealing individual scores)</li>
+                </ul>
+
+                <h4>Bias Prevention:</h4>
+                <ul>
+                    <li><strong>Monitor model fairness</strong> across departments and demographic groups to prevent discriminatory outcomes</li>
+                    <li><strong>Regular auditing</strong> to ensure predictions don't reinforce existing workplace inequities or create self-fulfilling prophecies</li>
+                    <li><strong>Avoid punitive use:</strong> Model should support employee development, not performance penalties or termination decisions</li>
+                </ul>
+
+                <h4>Responsible Implementation:</h4>
+                <ul>
+                    <li><strong>Supportive interventions only:</strong> Use predictions for career development conversations, mentoring assignments, and growth opportunities - never for disciplinary actions</li>
+                    <li><strong>Opt-out mechanisms:</strong> Provide options for employees uncomfortable with predictive analysis</li>
+                    <li><strong>Clear governance:</strong> Establish policies on how predictions influence HR decisions and retention strategies</li>
+                    <li><strong>Human oversight:</strong> All model predictions must be reviewed by HR professionals before any action is taken</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>⚖️ Long-term Considerations:</strong> Model should evolve with changing workplace dynamics and employee expectations through regular validation, retraining, and ethical impact assessments. The goal is employee wellbeing and organizational health, not surveillance or control.
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="index.html" class="back-btn" style="margin-right: 1rem;">← Project Overview</a>
+            <a href="results.html" class="back-btn" style="margin-right: 1rem;">📊 Model Results</a>
+            <a href="../../index.html" class="back-btn">🏠 Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
