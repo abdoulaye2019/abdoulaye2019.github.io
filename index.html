@@ -428,12 +428,12 @@
                 </div>
 
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <form action="https://formspree.io/f/xrbdbwpe" method="POST">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Votre nom" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Votre email" required>
+                            <input type="email" name="_replyto" placeholder="Votre email" required>
                         </div>
                         <div class="form-group">
                             <input type="text" name="subject" placeholder="Sujet" required>
@@ -442,6 +442,10 @@
                             <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Envoyer le message</button>
+
+                        <!-- Formspree configuration -->
+                        <input type="hidden" name="_subject" value="Nouveau message depuis votre portfolio">
+                        <input type="text" name="_gotcha" style="display:none">
                     </form>
                 </div>
             </div>
