@@ -78,7 +78,29 @@ Analyse prédictive du turnover des employés avec machine learning avancé. Dé
 - [💬 Q&A Détaillée](projects/salifort-hr-analytics/qa.html)
 - [📝 Page résumé](projects/salifort-motors.html)
 
-### 2. COVID-19 Dashboard Sénégal
+### 2. Cyclistic Bike Share Analysis
+
+[![View Project](https://img.shields.io/badge/View-Project-4facfe?style=for-the-badge&logo=github)](https://abdoulaye2019.github.io/Google_Data_Analytics_Case_Study_1/)
+
+Analyse complète des patterns d'utilisation d'un service de partage de vélos (Cyclistic). Comparaison des comportements entre utilisateurs occasionnels et membres pour optimiser les stratégies marketing et améliorer les taux de conversion.
+
+**Objectifs:**
+- Analyser les différences de comportement entre utilisateurs occasionnels et membres
+- Identifier les tendances mensuelles et hebdomadaires d'utilisation
+- Calculer la durée moyenne des trajets par segment
+- Proposer des recommandations data-driven pour la conversion
+
+**Résultats clés:**
+- 📊 Analyse de millions de trajets
+- 📈 Identification de patterns saisonniers et hebdomadaires
+- 💡 Recommandations stratégiques pour le marketing
+- 🎯 Insights sur le comportement utilisateur
+
+**Technologies**: R, RMarkdown, Tableau, Statistical Analysis, Data Visualization
+
+[🔗 Voir le projet complet](https://abdoulaye2019.github.io/Google_Data_Analytics_Case_Study_1/)
+
+### 3. COVID-19 Dashboard Sénégal
 Application web interactive pour le suivi en temps réel de la pandémie COVID-19 au Sénégal avec visualisations géospatiales.
 
 **Technologies**: Web Development, GIS, Data Visualization
