@@ -55,11 +55,26 @@ Je suis un professionnel spécialisé en **Data Management** et **Systèmes d'In
 ## 📂 Projets Principaux
 
 ### 1. Salifort Motors - HR Analytics
-Analyse prédictive du turnover des employés avec machine learning. Développement d'un modèle de régression logistique pour identifier les facteurs clés de départ et proposer des recommandations data-driven.
 
-**Technologies**: Python, Pandas, Scikit-learn, Jupyter
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abdoulaye2019/abdoulaye2019.github.io/blob/main/projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abdoulaye2019/abdoulaye2019.github.io/main?filepath=projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
+[![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-181717?style=flat&logo=github)](https://github.com/abdoulaye2019/abdoulaye2019.github.io/blob/main/projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
 
-[Voir le projet →](projects/salifort-motors.html)
+Analyse prédictive du turnover des employés avec machine learning avancé. Développement et optimisation de 3 modèles de classification (Logistic Regression, Random Forest, Gradient Boosting) pour identifier les facteurs clés de départ et proposer des recommandations data-driven.
+
+**Résultats clés:**
+- 🎯 **98.1% ROC-AUC** avec Gradient Boosting (meilleur modèle)
+- 📊 **95.1% de précision** et **93.2% de recall**
+- 💰 **$18.5M d'économies potentielles** par an grâce aux prédictions
+- 📈 **14,999 employés analysés** avec 10 features pertinentes
+
+**Technologies**: Python, Pandas, Scikit-learn, GridSearchCV, Matplotlib, Seaborn, Jupyter
+
+**Liens:**
+- [📊 Vue d'ensemble du projet](projects/salifort-hr-analytics/index.html)
+- [📈 Résultats & Modèles](projects/salifort-hr-analytics/results.html)
+- [💬 Q&A Détaillée](projects/salifort-hr-analytics/qa.html)
+- [📝 Page résumé](projects/salifort-motors.html)
 
 ### 2. COVID-19 Dashboard Sénégal
 Application web interactive pour le suivi en temps réel de la pandémie COVID-19 au Sénégal avec visualisations géospatiales.
