@@ -206,6 +206,7 @@ section {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline;
+    white-space: nowrap;
 }
 
 .hero-subtitle {
@@ -837,10 +838,14 @@ section {
     }
 
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         line-height: 1.4;
         word-break: normal;
         hyphens: none;
+    }
+
+    .hero-title .highlight {
+        white-space: nowrap;
     }
 
     .hero-subtitle {
@@ -953,10 +958,15 @@ section {
     }
 
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         line-height: 1.4;
         padding: 0 5px;
         max-width: 100%;
+    }
+
+    .hero-title .highlight {
+        white-space: nowrap;
+        font-size: 1.3rem;
     }
 
     .hero-subtitle {
@@ -1034,15 +1044,20 @@ section {
 /* Extra small devices */
 @media (max-width: 360px) {
     .hero-title {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+    }
+
+    .hero-title .highlight {
+        white-space: nowrap;
+        font-size: 1.1rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .hero-description {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .btn {
