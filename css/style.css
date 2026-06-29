@@ -707,6 +707,14 @@ ul { list-style: none; padding: 0; }
 }
 .collab__name { font-weight: 600; font-size: 1.06rem; line-height: 1.3; }
 .collab__desc { margin-top: .5rem; color: var(--ink-2); font-size: .92rem; }
+.collab-solo {
+    display: flex; gap: 1.4rem; align-items: flex-start;
+    max-width: 660px;
+    border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 1.8rem 2rem; background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+.collab-solo .collab__icon { margin-bottom: 0; flex-shrink: 0; }
 
 /* Contact */
 .contact-grid {

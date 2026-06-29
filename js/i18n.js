@@ -42,7 +42,7 @@
             "sec.certifications.title": "Certifications",
             "sec.certifications.sub": "Certifications distinctives en data science, télédétection et plateformes data modernes.",
             "sec.collaborations.title": "Collaborations institutionnelles",
-            "sec.collaborations.sub": "Travaux conduits avec UNHCR HQ Genève, l'OIM et les bureaux pays de la région.",
+            "sec.collaborations.sub": "Collaboration et appui aux opérations pays de la région.",
             "sec.contact.title": "Travaillons ensemble",
             "sec.contact.sub": "Disponible pour des missions de conseil, des collaborations et des opportunités internationales.",
 
@@ -174,7 +174,7 @@
             "sec.certifications.title": "Certifications",
             "sec.certifications.sub": "Distinctive certifications in data science, remote sensing and modern data platforms.",
             "sec.collaborations.title": "Institutional collaborations",
-            "sec.collaborations.sub": "Work conducted with UNHCR HQ Geneva, IOM and country offices across the region.",
+            "sec.collaborations.sub": "Collaboration and support with country operations across the region.",
             "sec.contact.title": "Let's work together",
             "sec.contact.sub": "Available for consulting engagements, collaborations and international opportunities.",
 
