@@ -87,4 +87,13 @@
     /* ---- Dynamic year ---- */
     const yearEl = document.querySelector("[data-year]");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+    /* ---- Contact form: loading state (Formspree handles submission) ---- */
+    const form = document.querySelector(".form");
+    if (form) {
+        form.addEventListener("submit", function () {
+            const btn = form.querySelector("button[type=submit]");
+            if (btn) btn.setAttribute("disabled", "disabled");
+        });
+    }
 })();
