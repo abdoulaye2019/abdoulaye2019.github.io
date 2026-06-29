@@ -1,153 +1,149 @@
-# Portfolio d'Abdoulaye Leye
+# Portfolio — Abdoulaye Leye
 
-![Visiteurs](https://hits.sh/abdoulaye2019.github.io.svg?style=flat&label=Visiteurs&color=2563eb&labelColor=1e40af)
+Site portfolio de **Abdoulaye Leye**, *Senior Information Management Associate* au Bureau régional UNHCR pour l'Afrique de l'Ouest et Centrale (RBWCA).
 
-Portfolio professionnel présentant mes projets en Data Analytics, SIG et Géomatique.
+🌐 **En ligne :** https://abdoulaye2019.github.io
+🗂️ **Stack :** HTML / CSS / JavaScript statiques, déployés via **GitHub Pages** — aucun framework, aucune étape de build.
 
-🌐 **Site web**: [https://abdoulaye2019.github.io](https://abdoulaye2019.github.io)
-
-## 👨‍💻 À propos
-
-Je suis un professionnel spécialisé en **Data Management** et **Systèmes d'Information Géographique (SIG)**, avec une expertise en:
-
-- 📊 Analyse de données et Business Intelligence
-- 🗺️ Géomatique et Télédétection
-- 🤖 Machine Learning appliqué
-- 📈 Visualisation de données et dashboards interactifs
-- 🛠️ ETL et gestion de bases de données
-
-## 🎓 Certifications
-
-- **Google Advanced Data Analytics Certificate** (2025)
-- **Google Data Analytics Professional Certificate** (2023)
-- **Data Analysis with Python** - FreeCodeCamp (2020-2021)
-- **NASA ARSET** - Large Scale Applications of Machine Learning (2024)
-- **Pandas Certification** - Kaggle (2022)
-
-## 🛠️ Technologies
-
-### Analyse de Données
-- **Langages**: Python, R, SQL
-- **Bibliothèques**: Pandas, NumPy, Matplotlib, Seaborn, Scipy
-- **Plateformes**: Google BigQuery, PostgreSQL
-
-### Business Intelligence
-- Power BI
-- Tableau
-- Looker Studio
-- Dashboards interactifs
-
-### SIG & Géomatique
-- QGIS, ArcGIS
-- PostGIS, Lizmap
-- QGIS Server
-- Télédétection
-
-### Collecte de Données
-- ODK, KoboToolbox
-- Google Forms
-- ETL Processes
-
-### Web Development
-- HTML, CSS, JavaScript
-- Shiny (R)
-- Quarto
-- Web Mapping
-
-## 📂 Projets Principaux
-
-### 1. Salifort Motors - HR Analytics
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abdoulaye2019/abdoulaye2019.github.io/blob/main/projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abdoulaye2019/abdoulaye2019.github.io/main?filepath=projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
-[![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-181717?style=flat&logo=github)](https://github.com/abdoulaye2019/abdoulaye2019.github.io/blob/main/projects/salifort-hr-analytics/Activity_%20Course%207%20Salifort%20Motors%20project%20lab.ipynb)
-
-Analyse prédictive du turnover des employés avec machine learning avancé. Développement et optimisation de 3 modèles de classification (Logistic Regression, Random Forest, Gradient Boosting) pour identifier les facteurs clés de départ et proposer des recommandations data-driven.
-
-**Résultats clés:**
-- 🎯 **98.1% ROC-AUC** avec Gradient Boosting (meilleur modèle)
-- 📊 **95.1% de précision** et **93.2% de recall**
-- 💰 **$18.5M d'économies potentielles** par an grâce aux prédictions
-- 📈 **14,999 employés analysés** avec 10 features pertinentes
-
-**Technologies**: Python, Pandas, Scikit-learn, GridSearchCV, Matplotlib, Seaborn, Jupyter
-
-**Liens:**
-- [📊 Vue d'ensemble du projet](projects/salifort-hr-analytics/index.html)
-- [📈 Résultats & Modèles](projects/salifort-hr-analytics/results.html)
-- [💬 Q&A Détaillée](projects/salifort-hr-analytics/qa.html)
-- [📝 Page résumé](projects/salifort-motors.html)
-
-### 2. Cyclistic Bike Share Analysis
-
-[![View Project](https://img.shields.io/badge/View-Project-4facfe?style=for-the-badge&logo=github)](https://abdoulaye2019.github.io/Google_Data_Analytics_Case_Study_1/)
-
-Analyse complète des patterns d'utilisation d'un service de partage de vélos (Cyclistic). Comparaison des comportements entre utilisateurs occasionnels et membres pour optimiser les stratégies marketing et améliorer les taux de conversion.
-
-**Objectifs:**
-- Analyser les différences de comportement entre utilisateurs occasionnels et membres
-- Identifier les tendances mensuelles et hebdomadaires d'utilisation
-- Calculer la durée moyenne des trajets par segment
-- Proposer des recommandations data-driven pour la conversion
-
-**Résultats clés:**
-- 📊 Analyse de millions de trajets
-- 📈 Identification de patterns saisonniers et hebdomadaires
-- 💡 Recommandations stratégiques pour le marketing
-- 🎯 Insights sur le comportement utilisateur
-
-**Technologies**: R, RMarkdown, Tableau, Statistical Analysis, Data Visualization
-
-[🔗 Voir le projet complet](https://abdoulaye2019.github.io/Google_Data_Analytics_Case_Study_1/)
-
-### 3. COVID-19 Dashboard Sénégal
-Application web interactive pour le suivi en temps réel de la pandémie COVID-19 au Sénégal avec visualisations géospatiales.
-
-**Technologies**: Web Development, GIS, Data Visualization
-
-[Voir le projet →](https://geoplanplus.com/index.php)
-
-### 3. Système de Suivi de Construction
-Système de suivi temps réel pour projets de construction avec intégration ETL (Google Forms, Sheets, BigQuery) et dashboards interactifs.
-
-**Technologies**: BigQuery, ETL, Power BI, Real-time monitoring
-
-### 4. Plateforme AIT (Aménagement et Intelligence Territoriale)
-Plateforme web pour l'aménagement territorial et l'intelligence géospatiale avec outils SIG et analyses spatiales.
-
-**Technologies**: QGIS, Web Mapping, PostGIS
-
-[Voir le site →](https://geoplanplus.com/index.php)
-
-## 💼 Expérience Professionnelle
-
-### Data Management/Analyst Specialist
-**UNHCR, The UN Refugee Agency** | Mars 2025 - Présent
-
-Gestion et analyse des données, production de cartes et visualisations pour la prise de décision. Développement d'outils de suivi et analyses pour les opérations humanitaires.
-
-### Data Analyst & Spécialiste SIG (Data Lead)
-**EXBAT SUARL** | Janvier 2023 - Mars 2025
-
-Conception de systèmes de suivi temps réel, intégration ETL, développement de dashboards interactifs pour le reporting opérationnel.
-
-## 📫 Contact
-
-- **Email**: samayayendiaye01@gmail.com | leyepro@hotmail.fr
-- **Téléphone**: +221 77 864 32 90
-- **LinkedIn**: [abdoulaye-leye](https://www.linkedin.com/in/abdoulaye-leye-0390b3167)
-- **GitHub**: [abdoulaye2019](https://github.com/abdoulaye2019)
-- **Kaggle**: [abdoulayeleye](https://www.kaggle.com/abdoulayeleye)
-- **Portfolio**: [geoplanplus.com](https://geoplanplus.com/index.php)
-
-## 🌍 Localisation
-
-Pikine, Dakar - Sénégal
-
-## 📜 Licence
-
-© 2025 Abdoulaye Leye. Tous droits réservés.
+Ce README est un **guide de maintenance** : comment modifier le site soi-même, section par section.
 
 ---
 
-Construit avec ❤️ par Abdoulaye Leye
+## 🧭 Principe directeur
+
+> **Uniquement vérifiable.** On n'affiche que des faits et des chiffres documentables et défendables en entretien. Un fait qualitatif réel (« repérée par 3 Senior Managers HQ ») vaut mieux qu'une métrique non sourcée. Pas de superlatifs creux, pas d'auto-notation en étoiles.
+
+---
+
+## 📁 Structure des fichiers
+
+```
+abdoulaye2019.github.io/
+├── index.html          # Page unique (toutes les sections)
+├── cv.html             # CV imprimable (Ctrl+P → Enregistrer en PDF)
+├── css/
+│   └── style.css       # Design system + tous les composants
+├── js/
+│   ├── i18n.js         # Moteur bilingue FR/EN (dictionnaire)
+│   └── script.js       # Nav, menu mobile, animations, formulaire
+├── assets/
+│   ├── CV_Abdoulaye_Leye.pdf       # CV téléchargeable (à régénérer depuis cv.html)
+│   └── images/
+│       ├── profile.png             # Photo du hero
+│       ├── topo-contours.svg       # Motif d'arrière-plan
+│       ├── badge-*.png             # Badges de certification
+│       └── projects/               # Visuels des projets phares (SVG/PNG)
+└── projects/           # Pages détaillées + archives (Salifort, etc.)
+```
+
+---
+
+## ✏️ Modifier le contenu
+
+### Le système bilingue (IMPORTANT)
+
+Tout texte traduit porte un attribut `data-i18n="clé"` dans `index.html`. Le texte réel vit dans **`js/i18n.js`**, dans deux dictionnaires : `fr` et `en`.
+
+**Règle d'or :** toute clé doit exister **dans les deux langues**. Si vous ajoutez `data-i18n="ma.cle"` dans le HTML, ajoutez `"ma.cle": "..."` **à la fois** dans le bloc `fr` ET dans le bloc `en` de `i18n.js`.
+
+Le texte écrit en dur dans le HTML sert de **secours** (affiché si JS désactivé) — gardez-le en français.
+
+> ✅ Vérifier qu'aucune clé ne manque (PowerShell) :
+> ```powershell
+> $html = Get-Content index.html -Raw; $js = Get-Content js/i18n.js -Raw
+> [regex]::Matches($html,'data-i18n(?:-html)?="([^"]+)"') | %{ $_.Groups[1].Value } | sort -Unique | %{
+>   $n = ([regex]::Matches($js, '"'+[regex]::Escape($_)+'":')).Count
+>   if ($n -lt 2) { "INCOMPLET ($n/2): $_" } }
+> ```
+
+### Ajouter / modifier un **projet phare**
+
+Dans `index.html`, section `#projects`, dupliquez un bloc `<article class="case">` (ajoutez `case--flip` pour inverser image/texte) :
+
+```html
+<article class="case" data-reveal>
+    <div class="case__media">
+        <div class="case__frame">
+            <img src="assets/images/projects/MON-IMAGE.svg" alt="..." loading="lazy">
+        </div>
+        <span class="case__badge"><i class="fas fa-..."></i> Badge</span>
+    </div>
+    <div class="case__body">
+        <span class="case__cat" data-i18n="proj.x.cat">Catégorie</span>
+        <h3 class="case__title" data-i18n="proj.x.title">Titre</h3>
+        <p class="case__text" data-i18n="proj.x.body">Contexte…</p>
+        <div class="case__impact">
+            <span class="lbl" data-i18n="proj.impact_label">Impact</span>
+            <p data-i18n="proj.x.impact">Impact réel et vérifiable…</p>
+        </div>
+        <div class="case__stack"><span class="tag">Outil</span></div>
+    </div>
+</article>
+```
+Puis ajoutez les clés `proj.x.*` dans `i18n.js` (FR + EN). Les `tag` (technos) ne se traduisent pas.
+
+### Ajouter / modifier une **réalisation secondaire**
+
+Dupliquez un `<article class="pcard">` dans la grille `.pgrid` (icône Font Awesome + titre + description + tags) et ajoutez les clés i18n.
+
+### Remplacer un **visuel de projet**
+
+Déposez votre image dans `assets/images/projects/` et pointez le `src`. Pour garder les placeholders actuels, **utilisez le même nom de fichier** (`proj-rbwca.svg`, `proj-earlywarning.svg`, `proj-mali.svg`) — ou changez l'extension dans le `src` (`.png`, `.jpg`).
+
+### Mettre à jour les **certifications**
+
+Section `#certifications`. Deux vedettes (`.cert-feat`) + une liste (`.cert-row`). Pour ajouter une ligne, dupliquez un `.cert-row` ; mettez le **lien de vérification** réel dans le `<a class="verify">` (sinon, retirez le lien).
+
+---
+
+## 🪪 Mettre à jour le CV
+
+Le CV est la page **`cv.html`** (à votre charte, format A4).
+
+1. Modifiez le texte directement dans `cv.html`.
+2. Ouvrez `cv.html` dans le navigateur → **`Ctrl + P`** → *Destination : Enregistrer au format PDF* → marges « par défaut ».
+3. Pour mettre à jour le **PDF téléchargeable**, enregistrez-le sous `assets/CV_Abdoulaye_Leye.pdf` (même nom).
+
+Le bouton « CV » du portfolio ouvre `cv.html`.
+
+---
+
+## 🎨 Repères de design (`css/style.css`, bloc `:root`)
+
+| Variable | Valeur | Usage |
+|---|---|---|
+| `--accent` | `#0072BC` | Bleu institutionnel UNHCR |
+| `--ink` | `#0E1B2A` | Texte principal |
+| `--paper` | `#FBFAF7` | Fond papier chaud |
+| `--ember` | `#C0561F` | Accent terracotta (parcimonieux) |
+| `--font-display` | Fraunces | Titres |
+| `--font-body` | IBM Plex Sans | Corps |
+| `--font-mono` | IBM Plex Mono | Étiquettes / données |
+
+---
+
+## 👀 Prévisualiser en local
+
+Ouvrez simplement `index.html` dans un navigateur. Pour un rendu fidèle (chemins relatifs) :
+
+```bash
+python -m http.server 8000
+# puis http://localhost:8000
+```
+
+---
+
+## 🚀 Déployer
+
+Le site est servi depuis la branche **`main`** par GitHub Pages. Pour publier :
+
+```bash
+git add -A
+git commit -m "Votre message"
+git push origin main
+```
+La mise en ligne prend ~1–2 minutes.
+
+---
+
+© Abdoulaye Leye — Dakar, Sénégal.

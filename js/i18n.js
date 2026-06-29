@@ -21,7 +21,7 @@
             "hero.role": "Senior Information Management Associate — Bureau régional UNHCR pour l'Afrique de l'Ouest et Centrale (RBWCA).",
             "hero.lead": "Je conçois des plateformes data, des systèmes d'information géographique et des assistants IA pour la réponse humanitaire — à l'échelle régionale, sur 23 pays d'Afrique de l'Ouest et Centrale.",
             "hero.cta_projects": "Voir mes projets",
-            "hero.cta_cv": "Télécharger le CV",
+            "hero.cta_cv": "Voir mon CV",
             "hero.available": "Disponible pour des missions de conseil",
 
             "ctx.scope_label": "Couverture régionale",
@@ -136,7 +136,7 @@
             "footer.tag": "Senior Information Management Associate — UNHCR RBWCA. Data, SIG et IA appliquée pour la réponse humanitaire.",
             "footer.nav": "Navigation",
             "footer.connect": "Réseaux",
-            "footer.cv": "Curriculum Vitæ (PDF)"
+            "footer.cv": "Curriculum Vitæ"
         },
 
         en: {
@@ -153,7 +153,7 @@
             "hero.role": "Senior Information Management Associate — UNHCR Regional Bureau for West & Central Africa (RBWCA).",
             "hero.lead": "I build data platforms, geographic information systems and AI assistants for humanitarian response — at regional scale, across 23 countries in West and Central Africa.",
             "hero.cta_projects": "View my work",
-            "hero.cta_cv": "Download CV",
+            "hero.cta_cv": "View my CV",
             "hero.available": "Available for consulting engagements",
 
             "ctx.scope_label": "Regional coverage",
@@ -268,7 +268,7 @@
             "footer.tag": "Senior Information Management Associate — UNHCR RBWCA. Data, GIS and applied AI for humanitarian response.",
             "footer.nav": "Navigation",
             "footer.connect": "Connect",
-            "footer.cv": "Curriculum Vitæ (PDF)"
+            "footer.cv": "Curriculum Vitæ"
         }
     };
 
